@@ -6,7 +6,7 @@ This repo is a modified version of a MarkDown theme created by [John Otander](ht
 
 Index site at: 
 ```
-http://vivacious-books.surge.sh/
+faded-afternoon.surge.sh
 ```
 ## Installation
 
