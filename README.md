@@ -10,24 +10,11 @@ http://vivacious-books.surge.sh/
 ```
 ## Installation
 
-#### Through npm:
-
-```
-npm install --save markdown-modest
-```
-
-This theme integrates well with `rework-npm`, and has rework CSS available in the index.css file.
-
-#### Clone the repo:
-
-```
-git clone https://github.com/markdowncss/modest.git
-```
 
 #### Development:
 
 ```
-git clone https://github.com/markdowncss/modest.git && cd modest
+git clone https://github.com/rice-apps/Project-PRDs.git && cd modest
 npm install
 gulp
 ```
@@ -39,7 +26,7 @@ Link the file in your Markdown to HTML build process:
 ```html
 <link rel="stylesheet" href="path/to/css/modest.css">
 ```
-
+Each team's html file is located under the folder `/teamPRDs`. 
 ## License
 
 MIT
