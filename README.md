@@ -14,7 +14,7 @@ http://vivacious-books.surge.sh/
 #### Development:
 
 ```
-git clone https://github.com/rice-apps/Project-PRDs.git && cd modest
+git clone https://github.com/rice-apps/Project-PRDs.git && cd Project-PRDs
 npm install
 gulp
 ```
