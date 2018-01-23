@@ -11,50 +11,351 @@
     <p>KOCs (Keepers of Coffee, AKA baristas) are scheduled at the beginning of each semester to work certain shifts every week.
         A google survey is sent out to everyone to fill out their availability for the semester as well as other relevant information
         such as who they prefer to work with. All information is kept and stored in multiple different google worksheets.
-
-        INSERT SCREEN SHOT HERE:
-
-
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     </p>
-    <h3>Part 1: Problem and User
-        <h4>Problem: </h4>
-        <ol>
-            <li>
-                Data Organization: What is the best way to store all this data?
-                <ul>
-                    <li>Max/Min hours of a KOC</li>
-                    <li>Availability of each shift: preferred, not preferred, not available</li>
-                    <li>Experience of each employee</li>
-                    <li>Number of people per shift</li>
-                </ul>
+    <h5>The Current Coffeehouse Scheduling Process</h5>
+    <p>
+        <ul>Timeline
+            <li>December: The manager sends out a google form to all employees to fill out indicating when they
+            are available on every shift of the week. Employees list their availability from 1-4, with 1 being the most
+            available. The manager then process this data manually and enters all of it into multiple Google Sheets,
+            each listing different information such as daily availability and hours worked. This process can take
+            approximately 10-12 hours. Then, employees email each other for shift trade requests, and then if a trade
+            is agreed upon, a Google Form is filled out specifying the details of the trade to inform the manager. </li>
+        <li>January: Permanent and temporary trades continue, as the manager continues to modify the schedule based on
+        these updated requests.</li>
+        <br>
 
+    </ul>
+    <ol style="font-size: 18px">Steps to Create Master Schedule
+
+            <li>
+                Fill Tuesday/Thursday 9-11 am slot
             </li>
             <li>
-                Data Visualization and Navigation: How can we make the scheduling process seamless and represent all this data?
-                <ul>
-                    <li>Managers need to shift back and forth between different excel worksheets to look up different metrics in order to schedule employees</li>
-                    <li>There are multiple excel worksheets to keep track of different metrics</li>
-                    <li>...</li>
-                </ul>
+                Fill Monday/Wednesday/Friday 9-11 am slot
             </li>
+            <li>
+                Fill closing shifts (they are low demand)
+            </li>
+            <li>
+                Fill opening shifts (they are high demand)
+            </li>
+            <li>
+                Fill 1-5pm slots for all days
+            </li>
+            <li>
+                Fill all remaining slots
+            </li>
+    </ol>
+
+    <br>
+    <ul>Trade Details
+        <li>
+            Google form is used for employees to specify slots traded, employees trading, and whether the change
+            is permanent or temporary.
+        </li>
+        <li>
+            Manager then manually calculates the change in the net work hours for the employees who traded.
+        </li>
+        <li>
+            In the case of a temporary change, the schedule itself is not changed.
+        </li>
+    </ul>
+    </p>
+    <br>
+    <h3>Part 1: Problem and User
+        <h4>Problem: The current Rice Coffeehouse shift scheduling and trading system is time-consuming, unintuitive,
+            and prone to human error.</h4>
+        <ul>
+            <li>
+              Currently, when scheduling, the coffeehouse manager must navigate between a large number of large,
+                complicated Google Sheets and scan them for precise information.
+            </li>
+            <ul>
+                <li>
+                    Each individual spreadsheet keeps track of a separate metric, such as the current schedule, employee
+                    preferences for shift hours, and hours worked.
+                </li>
+            </ul>
+            <p><img src="../src/img/screenshot.png"></p>
+            <li>
+                Copying the data requires the manager to extract raw data and perform conditional formatting before
+                inserting it into a new sheet.
+            </li>
+            <li>
+                It thus becomes difficult for the manager to look over the current data and check for potential mistakes.
+            </li>
+            <ul>
+                <li>
+                    A wrong spelling of name, for example, will result in that employees hours not being tracked.
+                </li>
+            </ul>
+            <li>
+                The current scheduling system also, does not handle special circumstances well, which can also lead to
+                errors.
+            </li>
+            <ul>
+                <li>
+                    If an employee is scheduled for a shift from 5-7, that will mean they will not have enough time
+                    to eat dinner at the Rice dining halls. The current system would do nothing to alert the manager
+                    about this mistake.
+                </li>
+            </ul>
+            <li>
+                Every incoming Coffeehouse scheduling manager must take a great deal of time to understand the
+                current complex scheduling process.
+            </li>
+
+        </ul>
+        <h4>Current Scheduling Software Solutions</h4>
+        <ul>Pros:
+            <li>High-Quality UI</li>
+            <li>Advanced Features </li>
+            <ul>
+                <li>Automatic clocking in</li>
+                <li>Statistics and data visualization</li>
+            </ul>
+        </ul>
+        <ul>
+            Cons:
+            <li>
+                Expensive
+            </li>
+            <li>
+                Don't deal with many scheduling problems unique to Coffeehouse.
+            </li>
+        </ul>
+        <h4>Use Cases</h4>
+
+        <ol style="font-size: 20px">
+
+            <li>Employee (listed by priority from most important to least)</li>
+            <ol>
+                <li>Gathering Information</li>
+                <li>Viewing Personal Schedule</li>
+                <li>Requesting Shift Trades</li>
+                <li>Inputting Special Requests/Circumstances</li>
+            </ol>
+            <br>
+            <li>Manager (listed by priority from most important to least)</li>
+            <ol>
+                <li>Creating the Master Schedule</li>
+                <li>Adding/Removing Employees</li>
+                <li>Asking Employees for their Information (i.e. availability)</li>
+                <li>Implementing Trades</li>
+                <li>Implementing Special Requests</li>
+                <li>Edge Cases (holidays/finals schedules) </li>
+            </ol>
+
         </ol>
 
-        <h4>Identify customers/users: </h4>
-            <blockquote>
-                <h5>As a  &lt role &gt, I want  &lt goal/desire &gt so that &lt benefit &gt.</h5>
-            </blockquote>
+        <h4>Customers / Users</h4>
+            <ol>
+                <li>
+                Coffeehouse scheduling manager will use the application to create
+                and maintain the schedules for all Coffeehouse employees.
+                </li>
+                <li>
+                    Coffeehouse employees will use the application to check their own schedules for the current week
+                    and to use a form to submit shift trades with other employees.
+                </li>
+            </ol>
 
-        <h4>Needs/goals/use case of users/customers: </h4>
 
-        <h4>Prioritizing: </h4>
-    </h3>
+    <br>
+
     <h3>Part 2: Product Specification</h3>
         <h4>Features: </h4>
-        <h4>Choose the more important features to implement:</h4>
-        <h4>Break each feature into smaller steps:</h4>
-        <h4>What features are required for your MVP:</h4>
+        <ol style="font-size: 20px">
+            <li>
+                Manager Can Create the Overall Schedule
+            </li>
+            <ol>
+                <li>
+                    Manager will see a week-long calendar schedule in which each day is split up into multiple buttons,
+                    each labeled by a particular time, representing a shift. Each button can be clicked, bringing up a
+                    modal screen in which the manager can see a list of currently scheduled and available coffeehouse
+                    employees. The manager will be able to add / remove employees from the selected shift. When an
+                    employee is added to the shift, they will disappear from the list of available employees.
+                </li>
+                <li>
+                    Each button in the week calendar view will have a color, representing how full that shift is.
+                </li>
+                <li>
+                    The application will keep track of the amount of hours the employees are scheduled for. The manager
+                    will receive a visual warning on the screen in the form of a popup if they attempt to schedule the
+                    employee for more hours than the set limit.
+                </li>
+                <li>
+                    The application will also send the manager a warning if they attempt to schedule an employee for two,
+                    non-consecutive shifts during the same day.
+                </li>
+            </ol>
+            <li> Employees Can View the Coffeehouse Schedule
+                <ol>
+                    <li>
+                        One view will allow employees to see their own, individual schedule for the current week.
+                        This will be similar to the view of the manager, except they will not have the ability to edit
+                        in this view.
+                    </li>
+                    <li>Another view will allow them to see the overall, master schedule. This will be the same
+                    as the master schedule the manager sees but once again without editing functionality.</li>
+                </ol>
+            </li>
+            <li> Employees Can Trade Shifts With Other Employees</li>
+            <ol>
+                <li>The application will replace the current Google Form used for submitting trade requests.
+                Now, this new online form on the application will automatically process the request, and update
+                the user's shift in the schedule, as well as the two employees' total hours. </li>
+            </ol>
+        </ol>
+
+
+
+        <!--<h4>Choose the more important features to implement:</h4>-->
+        <!--<h4>Break each feature into smaller steps:</h4>-->
+        <h4>The MVP:</h4>
+        <ol style="font-size: 20px">
+            <li>
+                Week long schedule that can be viewed by both the employees and the manger that display how full
+                each shift is. Colors represent how full each shift is.
+            </li>
+            <li>
+                Manager will have the ability to edit the master schedule. They will see a list of available/already booked
+                employees when they click on a particular shift and can add/remove employees.
+            </li>
+            <li>
+                Managers will receive a warning if they attempt to schedule an employee that is listed as unavailable for
+                that specific slot or if they attempt to book an employee for more than one consecutiveshift for one day.
+            </li>
+            <li>
+                A trading mechanism will allow employees to exchange shifts. This will be a form that will automatically
+                process the trade in the backend, updating the employees' availability and their total hours booked
+                for that week.
+            </li>
+            <li>
+                The backend of the application will keep track of the total number of hours each employee has worked.
+            </li>
+            <li>
+                Elastic Search will be implemented to our databases in order to allow for a more robust and efficient
+                way to look through and process data.
+            </li>
+            <li>
+                Friday at 5pm, the hours for each employee in the backend will reset, and the display will change to show
+                the next weeks employee availabilities.
+            </li>
+        </ol>
+        <h4>Prototypes</h4>
+        <ol style="font-size: 20px;">
+            <li>Prototype 0: Already Implemented</li>
+            <li>Prototype 1:</li>
+            <ol>
+                <li>
+                    The backend will be update to accommodate new required fields:
+                    <ul>
+                        <li>
+                            Total working hours for each employee
+                        </li>
+                        <li>
+                            Total working hours (cap) for the week for the user
+                        </li>
+                        <li>
+                            Min hour, max hour per week
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    Elastic Search will be implemented to allow faster and more robust data querying.
+                </li>
+                <li>
+                    Front-end modal shows manager editing shifts proper information about employees. Accomponyig
+                    React components / Redux states and actions.
+                </li>
+                </ol>
+                <li>Prototype 2:</li>
+                <ol>
+                    <li>
+                        Manager will receive popup warning when scheduling a booked employee or double booking.
+                        This will require incorporating back-end data and implementing the front end visuals for
+                        the popup.
+                    </li>
+                    <li>
+                        Total hours get reset after each week. This means the backend data will have to undergo a shift
+                        after a certain period of time.
+                    </li>
+                    <li>
+                        Trading forms work properly and update the backend data. Requires implementing a form on the
+                        front-end that allows employees to fill out various data entries that then moodift the backend
+                        data once an employee submits the form.
+                    </li>
+                </ol>
+                <li>Prototype 3:</li>
+                <ol>
+                    <li>
+                        Deploy MVP. Set up proper hosting for both front end and backend data.
+                    </li>
+                    <li>
+                        Test the Application. Make sure the application works without bugs and that all features listed
+                        above are properly implemented.
+                    </li>
+                    <li>
+                        Beta Testing at Coffeehouse. Have the scheduling manager and
+                        Coffeehouse employees use the application. Receive feedback by speaking to users and collecting
+                        data.
+                    </li>
+                </ol>
+            </ol>
+        </ol>
+        <br>
     <h3>Part 3: Product Road Map</h3>
+    <ul>
+        <li>
+            January:
+        </li>
+        <ul>
+            <li>20/21 Sprint 1 ⇒ Done
+            </li>
+            <li>27/28 Sprint 2 ⇒ Reconstruction of data representation on backend with added metrics w/ elastic search
+            </li>
+        </ul>
+        <li>
+            February:
+        </li>
+        <ul>
+            <li>3/4 Sprint 3 ⇒ Reconstruction of data representation on backend with added metrics w/ elastic search
+
+            </li>
+            <li>Sprint 4 (OPTIONAL, Spring Recess) ⇒ Reconstruction of data representation on backend with added metrics w/ elastic search
+
+            </li>
+            <li>17/18 Sprint 5 ⇒ Updating our get and put requests with elastic search and adding additional ones
+            </li>
+            <li>24/25 Sprint 6 ⇒ Front-end modal display of metrics, redux states, back end queries (actions)
+            </li>
+        </ul>
+        <li>March</li>
+        <ul>
+            <li>3/4 Sprint 7 ⇒  FINISH PROTOTYPE 1
+            </li>
+            <li>10/11 NO SPRINTS (SPRING BREAK)
+            </li>
+            <li>
+                17/18 Sprint 8 ⇒ Implement warnings, resetting total hours worked
+            </li>
+            <li>24/25 Sprint 9 ⇒ trading forms, refactoring
+            </li>
+        </ul>
+        <li>April</li>
+        <ul>
+            <li>
+                7/8 Sprint 10 ⇒ Deploy and launch
+            </li>
+            <li>
+                13/14 End of semester review
+            </li>
+        </ul>
+    </ul>
 
 
 </body>
